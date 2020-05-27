@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id "com.github.lkishalmi.gatling" version "3.3.4"
+}
+
+group 'demo'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+gatling {
+    // do not include classes and resources from src/main
+    includeMainOutput = false
+    // do not include classes and resources from src/test
+    includeTestOutput = false
+}
+
+dependencies {
+    gatling 'com.google.code.gson:gson:2.8.0'
+    gatlingImplementation 'org.apache.commons:commons-lang3:3.4'
+    gatlingRuntimeOnly 'cglib:cglib-nodep:3.2.0'
+}
