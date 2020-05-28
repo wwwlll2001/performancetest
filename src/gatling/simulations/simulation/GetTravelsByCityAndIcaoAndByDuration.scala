@@ -6,11 +6,13 @@ import io.gatling.core.Predef._
 
 import scala.concurrent.duration._
 
-class GetTravelsByDuration extends SimulationBase {
-  val feeder = csv(dirPath + "/data/city.csv").random
+class GetTravelsByCityAndIcaoAndByDuration extends SimulationBase {
+  val feederCity = csv(dirPath + "/data/city.csv").random
+  val feederIcao = csv(dirPath + "/data/icao.csv").random
 
   val getTravel = scenario("Get Travels")
-    .feed(feeder)
+    .feed(feederCity)
+    .feed(feederIcao)
     .during(2 minutes) {
       exec(GETApiTravels.send)
     }

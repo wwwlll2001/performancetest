@@ -1,6 +1,6 @@
 package simulation
 
-import api.GETApiTravelsByCity
+import api.GETApiTravels
 import base.SimulationBase
 import io.gatling.core.Predef._
 
@@ -12,7 +12,7 @@ class GetTravels extends SimulationBase {
   val getTravel = scenario("Get Travels")
     .feed(feeder)
     .repeat(repeatTimes) {
-      exec(GETApiTravelsByCity.send)
+      exec(GETApiTravels.send)
     }
     .pause(thinkTime)
 
