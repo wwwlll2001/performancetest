@@ -22,12 +22,11 @@ gatling {
     includeTestOutput = false
 }
 
-gatlingRun {
-    outputs.upToDateWhen { false }
-}
 
 dependencies {
     gatling 'com.google.code.gson:gson:2.8.0'
     gatlingImplementation 'org.apache.commons:commons-lang3:3.4'
     gatlingRuntimeOnly 'cglib:cglib-nodep:3.2.0'
 }
+
+gatlingRun.outputs.upToDateWhen { false }
