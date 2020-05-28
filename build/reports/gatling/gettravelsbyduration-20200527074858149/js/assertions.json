@@ -1,0 +1,10 @@
+{
+  "simulation": "simulation.GetTravelsByDuration",
+  "simulationId": "gettravelsbyduration",
+  "start": 1590565738149,
+  "description": "",
+  "scenarios": ["Get Travels"],
+  "assertions": [
+
+  ]
+}
